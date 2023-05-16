@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hangman Game");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Adam Asmaca");
         }
     }
 }
