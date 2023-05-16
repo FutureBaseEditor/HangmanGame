@@ -4,7 +4,14 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hangman Game");
+
+
+
+
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Harf Giriniz: ");
+            string harfGirdisi = Console.ReadLine();
         }
     }
 }
