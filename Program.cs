@@ -9,9 +9,10 @@
 
 
 
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("Harf Giriniz: ");
             string harfGirdisi = Console.ReadLine();
+            Console.ResetColor();
         }
     }
 }
