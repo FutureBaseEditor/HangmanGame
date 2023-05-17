@@ -4,8 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Adam Asmaca");
+            string a = "Adam Asmaca";
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(a);
+            Console.ResetColor();
         }
     }
 }
