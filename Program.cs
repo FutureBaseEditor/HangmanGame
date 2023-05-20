@@ -7,6 +7,7 @@
 
             while (true)
             {
+               
                 string[] hayvanlar = { "Kedi", "Köpek", "At", "Tavşan", "Leylek", "Deve", "Yarasa", "Sincap", "Sinek", "Karınca" };
                 string[] ulkeler = { "Türkiye", "İtalya", "Kanada", "Almanya", "Japonya", "İngiltere", "Rusya", "Fransa", "Meksika", "Brezilya" };
                 string[] meslekler = { "Öğretmen", "Doktor", "Mühendis", "Hemşire", "Polis", "Avukat", "İnşaat işçisi", "Dişçi", "Gazeteci", "Bankacı" };
@@ -20,6 +21,11 @@
                 Console.WriteLine(title);
                 Console.ResetColor();
 
+                string category = "Kategori Seçiniz: ";
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(category);
+                Console.ResetColor();
+
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("Harf Giriniz: ");
                 string harfGirdisi = Console.ReadLine();
@@ -30,6 +36,8 @@
                 Console.WriteLine(knownWords);
                 Console.WriteLine("Anasayfaya dönmek için enter'a basın");
                 Console.ReadLine();
+
+
             }
 
         }
