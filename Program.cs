@@ -30,10 +30,10 @@
                     if (harf == harfler.Length / 2)
                         Console.WriteLine();
                 }
-                
+                Console.WriteLine();
                 string category = "Kategori Seçiniz: ";
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write(category);
+                Console.WriteLine(category);
                 Console.ResetColor();
                 Console.ReadLine();
 
