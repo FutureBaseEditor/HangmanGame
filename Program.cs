@@ -44,6 +44,7 @@
                 Console.WriteLine();
                 Console.Clear();
                 Console.WriteLine(knownWords);
+                Console.WriteLine("Oyun Bitti");
                 Console.WriteLine("Anasayfaya dönmek için enter'a basın");
                 Console.ReadLine();
 
