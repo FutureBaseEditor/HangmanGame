@@ -4,6 +4,8 @@
     {
         static void Main(string[] args)
         {
+
+            int knownWords = 0;
             string [] hayvanlar = { "Kedi", "Köpek", "At", "Tavşan", "Leylek", "Deve", "Yarasa", "Sincap", "Sinek", "Karınca" };
             string [] ulkeler = { "Türkiye", "İtalya", "Kanada", "Almanya", "Japonya", "İngiltere", "Rusya", "Fransa", "Meksika", "Brezilya" };
             string [] meslekler = { "Öğretmen", "Doktor", "Mühendis", "Hemşire", "Polis", "Avukat", "İnşaat işçisi", "Dişçi", "Gazeteci", "Bankacı" };
@@ -23,6 +25,8 @@
 
             Console.WriteLine();
             Console.Clear();
+
+            Console.WriteLine(knownWords);
 
         }
         
