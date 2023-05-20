@@ -30,11 +30,12 @@
                     if (harf == harfler.Length / 2)
                         Console.WriteLine();
                 }
-
+                
                 string category = "Kategori Seçiniz: ";
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(category);
+                Console.Write(category);
                 Console.ResetColor();
+                Console.ReadLine();
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("Harf Giriniz: ");
