@@ -20,6 +20,16 @@
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine(title);
                 Console.ResetColor();
+               
+                char[] harfler = {'A','B','C','D','E','F','G','Ğ','H','I','İ','J','K','L','M',
+                'N','O','Ö','P','R','S','Ş','T','U','Ü','V','Y','Z'};
+
+                for (int harf = 0; harf < harfler.Length; harf++)
+                {
+                    Console.Write("{0}  ", harfler[harf]);
+                    if (harf == harfler.Length / 2)
+                        Console.WriteLine();
+                }
 
                 string category = "Kategori Seçiniz: ";
                 Console.ForegroundColor = ConsoleColor.Red;
