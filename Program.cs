@@ -16,8 +16,14 @@
             Console.WriteLine(title);
             Console.ResetColor();
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("Harf Giriniz: ");
+            string harfGirdisi = Console.ReadLine();
+            Console.ResetColor();
+
             Console.WriteLine();
             Console.Clear();
+
         }
         
     }
