@@ -31,6 +31,19 @@
                         Console.WriteLine();
                 }
                 Console.WriteLine();
+
+                for (int i = 0; i < kategoriler.Length; i++)
+                {
+                    //Console.WriteLine(kategoriler[i]);
+
+                    if (i % 2 == 1)
+                    {
+                        Console.WriteLine(i + 1 + "-" + kategoriler[i] + " ");
+                    }
+                    else
+                        Console.Write(i + 1 + "-" + kategoriler[i] + " ");
+
+                }
                 string category = "Kategori Seçiniz: ";
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(category);
