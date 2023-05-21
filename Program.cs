@@ -3,19 +3,77 @@
     internal class Program
     {
         static void Main(string[] args)
-        {
-            Console.WriteLine("Hangman Game");
 
-            char harf[] = {'a','b' };  //diyelim ki böyle bir dizi oluşturduk
-            char selectedLetter = 'a' ;// seçilen harf için bu değişkene atadık
-            for (int i = 0; i < harf[i].length; i++)
+            while (true)
             {
-                if (selectedLetter == harf[i])Console.Write(" "); 
-            // seçilen harf x[i] harf dizisindeki harflerden i index numarasına sahip harfe eşit ise;
+               
+                string[] hayvanlar = { "Kedi", "Köpek", "At", "Tavşan", "Leylek", "Deve", "Yarasa", "Sincap", "Sinek", "Karınca" };
+                string[] ulkeler = { "Türkiye", "İtalya", "Kanada", "Almanya", "Japonya", "İngiltere", "Rusya", "Fransa", "Meksika", "Brezilya" };
+                string[] meslekler = { "Öğretmen", "Doktor", "Mühendis", "Hemşire", "Polis", "Avukat", "İnşaat işçisi", "Dişçi", "Gazeteci", "Bankacı" };
+                string[] yemekler = { "Makarna", "Kebap", "Pilav", "Pizza", "Köfte", "Tavuk", "Balık", "Mantı", "Börek", "Salata" };
+                string[] sporlar = { "Futbol", "Basketbol", "Voleybol", "Tenis", "Yüzme", "Atletizm", "Boks", "Jimnastik", "Hentbol", "Ragbi" };
+                string[] kategoriler = { "Hayvanlar", "Ülkeler", "Meslekler", "Yemekler", "Sporlar" };
+
+                int knownWords = 0;
+                string title = "Adam Asmaca";
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(title);
+                Console.ResetColor();
+               
+                char[] harfler = {'A','B','C','D','E','F','G','Ğ','H','I','İ','J','K','L','M',
+                'N','O','Ö','P','R','S','Ş','T','U','Ü','V','Y','Z'};
+
+                for (int harf = 0; harf < harfler.Length; harf++)
+                {
+                    Console.Write("{0}  ", harfler[harf]);
+                    if (harf == harfler.Length / 2)
+                        Console.WriteLine();
+                }
+                Console.WriteLine();
+
+                for (int i = 0; i < kategoriler.Length; i++)
+                {
+                    //Console.WriteLine(kategoriler[i]);
+
+                    if (i % 2 == 1)
+                    {
+                        Console.WriteLine(i + 1 + "-" + kategoriler[i] + " ");
+                    }
+                    else
+                        Console.Write(i + 1 + "-" + kategoriler[i] + " ");
+
+                }
+                string category = "Kategori Seçiniz: ";
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(category);
+                Console.ResetColor();
+                Console.ReadLine();
+
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("Harf Giriniz: ");
+                string harfGirdisi = Console.ReadLine();
+                Console.ResetColor();
+              
+               for (int harf = 0; harf < harfler.Length; harf++)
+                {
+                    if (harfGirdisi == harfler[harf])
+                        harfler[harf] = ' ';
+                    else
+                        Console.Write("{0}  ", harfler[harf]);
+
+                    if (harf == harfler.Length / 2)
+                        Console.WriteLine();
+                }
+
+                Console.WriteLine();
+                Console.Clear();
+                Console.WriteLine(knownWords);
+                Console.WriteLine("Oyun Bitti");
+                Console.WriteLine("Anasayfaya dönmek için enter'a basın");
+                Console.ReadLine();
+
+
             }
-
-
-
         }
     }
 }
