@@ -97,10 +97,13 @@ namespace Hangman
             {
                 if (questionLetter == questionWord[i])
                 {
-                    knownWords++; //Console.WriteLine("Doğru Tahmin"); }      eğer varise bilinen harf puanı bir artar.
-                }                 // else wrongAnsver++; //Console.WriteLine("Doğru Tahmin");yoksa yanlış cevap puanı 1 artar
+                    knownWords++; //      eğer varise bilinen harf puanı bir artar.
+                }                 
+                else wrongAnsver++; //yoksa yanlış cevap puanı 1 artar
                 ExtraPoint();
             }
         }
+
+
     }
 }
