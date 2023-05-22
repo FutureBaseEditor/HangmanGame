@@ -1,7 +1,16 @@
-﻿namespace Hangman
+﻿using static System.Formats.Asn1.AsnWriter;
+
+namespace Hangman
 {
     internal class Program
     {
+        static int extraPoint = 100;
+        static int knownWords = 0;
+        static int wrongAnsver = 0;
+        static int wordCompletion = 0;
+        static int score = 0;
+        static string questionWord;
+        static char questionLetter;
         static void Main(string[] args)
         {
 
@@ -21,16 +30,6 @@
                 Console.WriteLine(title);
                 Console.ResetColor();
                
-                char[] harfler = {'A','B','C','D','E','F','G','Ğ','H','I','İ','J','K','L','M',
-                'N','O','Ö','P','R','S','Ş','T','U','Ü','V','Y','Z'};
-
-                for (int harf = 0; harf < harfler.Length; harf++)
-                {
-                    Console.Write("{0}  ", harfler[harf]);
-                    if (harf == harfler.Length / 2)
-                        Console.WriteLine();
-                }
-                Console.WriteLine();
 
                 for (int i = 0; i < kategoriler.Length; i++)
                 {
@@ -44,16 +43,31 @@
                         Console.Write(i + 1 + "-" + kategoriler[i] + " ");
 
                 }
+                Console.WriteLine();
                 string category = "Kategori Seçiniz: ";
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(category);
                 Console.ResetColor();
                 Console.ReadLine();
+                Console.WriteLine();
+
+                char[] harfler = {'A','B','C','D','E','F','G','Ğ','H','I','İ','J','K','L','M',
+                'N','O','Ö','P','R','S','Ş','T','U','Ü','V','Y','Z'};
+
+                for (int harf = 0; harf < harfler.Length; harf++)
+                {
+                    Console.Write("{0}  ", harfler[harf]);
+                    if (harf == harfler.Length / 2)
+                        Console.WriteLine();
+                }
+                Console.WriteLine();
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("Harf Giriniz: ");
                 string harfGirdisi = Console.ReadLine();
                 Console.ResetColor();
+
+                Correctguess(harfGirdisi);
 
                 Console.WriteLine();
                 Console.Clear();
@@ -66,6 +80,27 @@
             }
 
         }
-        
+        static void ExtraPoint()
+        {
+            if (knownWords == questionWord.Length)  // eğer bilinen harf sayısı soru kelimesinin uzunluk değerine eşit ise
+            {
+                wordCompletion = score + extraPoint;// kelime tamamlanma değişkenine 
+                wrongAnsver = 0;                    // extra puan  ve puan hanesi eklenir 
+            }                                       // yanlış cevap değişkeni 0 olur
+
+        }
+        static void Correctguess(string harfGirdisi)
+        {
+            char questionLetter = char.Parse(harfGirdisi);
+
+            for (int i = 0; i < questionWord.Length; i++)   // soru kelimesi dizisinin harfleri içersinde girilen harf aratılır. 
+            {
+                if (questionLetter == questionWord[i])
+                {
+                    knownWords++; //Console.WriteLine("Doğru Tahmin"); }      eğer varise bilinen harf puanı bir artar.
+                }                 // else wrongAnsver++; //Console.WriteLine("Doğru Tahmin");yoksa yanlış cevap puanı 1 artar
+                ExtraPoint();
+            }
+        }
     }
 }
