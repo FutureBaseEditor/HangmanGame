@@ -2,6 +2,13 @@
 {
     internal class Program
     {
+        static int extraPoint = 100;
+        static int knownWords = 0;
+        static int wrongAnsver = 0;
+        static int wordCompletion = 0;
+        static int score = 0;
+        static string questionWord;
+        static char questionLetter;
         static void Main(string[] args)
         {
 
@@ -55,6 +62,12 @@
                 string harfGirdisi = Console.ReadLine();
                 Console.ResetColor();
 
+
+
+                Correctguess(harfGirdisi);
+
+
+
                 Console.WriteLine();
                 Console.Clear();
                 Console.WriteLine(knownWords);
@@ -66,6 +79,28 @@
             }
 
         }
-        
+        static void ExtraPoint()
+        {
+            if (knownWords == questionWord.Length)  // eğer bilinen harf sayısı soru kelimesinin uzunluk değerine eşit ise
+            {
+                wordCompletion = score + extraPoint;// kelime tamamlanma değişkenine 
+                wrongAnsver = 0;                    // extra puan  ve puan hanesi eklenir 
+            }                                       // yanlış cevap değişkeni 0 olur
+
+        }
+        static void Correctguess(string harfGirdisi)
+        {
+            char questionLetter = char.Parse(harfGirdisi);
+
+            for (int i = 0; i < questionWord.Length; i++)   // soru kelimesi dizisinin harfleri içersinde girilen harf aratılır. 
+            {
+                if (questionLetter == questionWord[i])
+                {
+                    knownWords++; //Console.WriteLine("Doğru Tahmin"); }      eğer varise bilinen harf puanı bir artar.
+                }                 // else wrongAnsver++; //Console.WriteLine("Doğru Tahmin");yoksa yanlış cevap puanı 1 artar
+                ExtraPoint();
+            }
+        }
+
     }
 }
