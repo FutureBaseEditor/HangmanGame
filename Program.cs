@@ -23,7 +23,7 @@ namespace Hangman
                 string[] yemekler = { "Makarna", "Kebap", "Pilav", "Pizza", "Köfte", "Tavuk", "Balık", "Mantı", "Börek", "Salata" };
                 string[] sporlar = { "Futbol", "Basketbol", "Voleybol", "Tenis", "Yüzme", "Atletizm", "Boks", "Jimnastik", "Hentbol", "Ragbi" };
                 string[] kategoriler = { "Hayvanlar", "Ülkeler", "Meslekler", "Yemekler", "Sporlar" };
-
+                int wrongAnsver = 0;
                 int knownWords = 0;
                 string title = "Adam Asmaca";
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -51,7 +51,7 @@ namespace Hangman
                 Console.ReadLine();
                 Console.WriteLine();
 
-                char[] harfler = {'A','B','C','D','E','F','G','Ğ','H','I','İ','J','K','L','M',
+                char[] harfler = {'A','B','C','Ç','D','E','F','G','Ğ','H','I','İ','J','K','L','M',
                 'N','O','Ö','P','R','S','Ş','T','U','Ü','V','Y','Z'};
 
                 for (int harf = 0; harf < harfler.Length; harf++)
@@ -69,6 +69,10 @@ namespace Hangman
 
                 Correctguess(harfGirdisi);
 
+
+
+                Draw(wrongAnsver);
+
                 Console.WriteLine();
                 Console.Clear();
                 Console.WriteLine(knownWords);
@@ -77,8 +81,165 @@ namespace Hangman
                 Console.ReadLine();
 
 
+
+
             }
 
+        }
+        
+        static string[] GetAppearance(int wrongAnsver)
+        {
+                    string[] Begingame =
+            {
+        "     X X X X X X 	",
+        "     X         X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "              XXX "
+    };
+                    string[] Wrong1 =
+            {
+        "     X X X X X X 	",
+        "     X         X	",
+        "   X X X       X	",
+        "  X     X      X	",
+        "  X     X      X	",
+        "  X     X      X	",
+        "   X X X       X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "               X	",
+        "              XXX "
+    };
+                    string[] Wrong2 =
+            {
+        "     X X X X X X 	",
+        "     X         X	",
+        "   X X X       X	",
+        "  X     X      X	",
+        "  X     X      X	",
+        "  X     X      X	",
+        "   X X X       X	",
+        "     X         X	",
+        "     X         X	",
+        "     X         X	",
+        "     X         X	",
+        "     X         X	",
+        "     X         X	",
+        "               X	",
+        "               X	",
+        "              XXX "
+    };
+                    string[] Wrong3 =
+            {
+        "     X X X X X X 	",
+        "     X         X	",
+        "   X X X       X	",
+        "  X     X      X	",
+        "  X     X      X	",
+        "  X     X      X	",
+        "   X X X       X	",
+        "     X         X	",
+        "   X X         X	",
+        " X   X         X	",
+        "X    X         X	",
+        "     X         X	",
+        "     X         X	",
+        "               X	",
+        "               X	",
+        "              XXX"
+    };
+                    string[] Wrong4 =
+            {
+        "     X X X X X X 	",
+        "     X         X	",
+        "   X X X       X	",
+        "  X     X      X	",
+        "  X     X      X	",
+        "  X     X      X	",
+        "   X X X       X	",
+        "     X         X	",
+        "   X X X       X	",
+        " X   X   X     X	",
+        "X    X     X   X	",
+        "     X         X	",
+        "     X         X	",
+        "               X	",
+        "               X	",
+        "              XXX "
+    };
+                    string[] Wrong5 =
+            {
+        "     X X X X X X 	",
+        "     X         X	",
+        "   X X X       X	",
+        "  X     X      X	",
+        "  X     X      X	",
+        "  X     X      X	",
+        "   X X X       X	",
+        "     X         X	",
+        "   X X X       X	",
+        " X   X   X     X	",
+        "X    X     X   X	",
+        "     X         X	",
+        "   X X         X	",
+        " X             X	",
+        "X              X	",
+        "              XXX "
+    };
+                    string[] Wrong6 =
+            {
+        "     X X X X X X 	",
+        "     X         X	",
+        "   X X X       X	",
+        "  X     X      X	",
+        "  X     X      X	",
+        "  X     X      X	",
+        "   X X X       X	",
+        "     X         X	",
+        "   X X X       X	",
+        " X   X   X     X	",
+        "X    X     X   X	",
+        "     X         X	",
+        "   X X X       X	",
+        " X       X     X	",
+        "X          X   X	",
+        "              XXX "
+    };
+
+                         if (wrongAnsver == 1) { return Wrong1; Console.Beep(2000, 2000); } 
+                    else if (wrongAnsver == 2) { return Wrong2; Console.Beep(2000, 2000); } 
+                    else if (wrongAnsver == 3) { return Wrong3; Console.Beep(2000, 2000); } 
+                    else if (wrongAnsver == 4) { return Wrong4; Console.Beep(2000, 2000); } 
+                    else if (wrongAnsver == 5) { return Wrong5; Console.Beep(2000, 2000); } 
+                    else if (wrongAnsver == 6) { return Wrong6; Console.Beep(2000, 2000); }
+                    else return Begingame;
+            
+        }
+        static void Draw(int a)
+        {
+            string[] appearance = GetAppearance(wrongAnsver);
+
+            for (int i = 0; i < appearance.Length; i++)
+            {
+                Console.WriteLine(appearance[i]);
+            }
         }
         static void ExtraPoint()
         {
@@ -97,10 +258,12 @@ namespace Hangman
             {
                 if (questionLetter == questionWord[i])
                 {
-                    knownWords++; //Console.WriteLine("Doğru Tahmin"); }      eğer varise bilinen harf puanı bir artar.
-                }                 // else wrongAnsver++; //Console.WriteLine("Doğru Tahmin");yoksa yanlış cevap puanı 1 artar
+                    knownWords++; //      eğer varise bilinen harf puanı bir artar.
+                }                 
+                else wrongAnsver++; //yoksa yanlış cevap puanı 1 artar
                 ExtraPoint();
             }
         }
+
+        }
     }
-}
