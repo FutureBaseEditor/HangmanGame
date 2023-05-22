@@ -264,6 +264,4 @@ namespace Hangman
                 ExtraPoint();
             }
         }
-
-        }
     }
