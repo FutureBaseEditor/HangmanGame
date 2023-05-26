@@ -44,12 +44,22 @@
                         Console.Write(i + 1 + "-" + kategoriler[i] + " ");
 
                 }
-                string category = "Kategori Seçiniz: ";
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(category);
+                Console.Write("\nlütfen 1 ile 5 arasında bir kategori seçiniz: ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                int category=int.Parse(Console.ReadLine());
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.ResetColor();
                 Console.ReadLine();
 
+                Console.ForegroundColor = ConsoleColor.Blue;
+                string secim = 
+                 (category == 1) ? "Seçiminiz "+kategoriler[0]+" kategorisidir" :
+                 (category == 2) ? "Seçiminiz "+kategoriler[1]+"  kategorisidir" :
+                 (category == 3) ? "Seçiminiz "+kategoriler[2]+"  kategorisidir" :
+                 (category == 4) ? "Seçiminiz "+kategoriler[3]+" kategorisidir" :
+                 (category == 5) ? "Seçiminiz "+kategoriler[4]+" kategorisidir" : " seçiminiz 1 ile 5 arasında olmalıdır";
+                Console.WriteLine(secim);
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("Harf Giriniz: ");
                 string harfGirdisi = Console.ReadLine();
