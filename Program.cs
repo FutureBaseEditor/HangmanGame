@@ -2,6 +2,8 @@
 {
     internal class Program
     {
+        static char[] harfler = {'A','B','C','Ç','D','E','F','G','Ğ','H','I','İ','J','K','L','M',
+                'N','O','Ö','P','R','S','Ş','T','U','Ü','V','Y','Z'};
         static void Main(string[] args)
         { 
                
@@ -38,7 +40,7 @@
                 Console.ResetColor();
                 Console.ReadLine();
 
-            char[] harfler = {'A','B','C','D','E','F','G','Ğ','H','I','İ','J','K','L','M',
+            char[] harfler = {'A','B','C','Ç','D','E','F','G','Ğ','H','I','İ','J','K','L','M',
                 'N','O','Ö','P','R','S','Ş','T','U','Ü','V','Y','Z'};
 
                 for (int harf = 0; harf < harfler.Length; harf++)
@@ -53,10 +55,11 @@
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("Harf Giriniz: ");
-                string harfGirdisi = Console.ReadLine().ToUpper();
+                ConsoleKeyInfo harfGirdisi = Console.ReadKey();
                 Console.ResetColor();
 
-                char harfGir = char.Parse(harfGirdisi);
+                char harfGir = char.ToUpper(harfGirdisi.KeyChar);
+                Console.WriteLine();
 
                 for (int harf = 0; harf < harfler.Length; harf++)
                 {
@@ -67,8 +70,6 @@
                     if (harf == harfler.Length / 2)
                         Console.WriteLine();
                 }
-
-                //Console.WriteLine();
                 //Console.Clear();
                 //Console.WriteLine(knownWords);
                 //Console.WriteLine("Oyun Bitti");
